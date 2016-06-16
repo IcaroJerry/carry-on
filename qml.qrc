@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/Lane.qml</file>
+        <file>qml/Car.qml</file>
+        <file>qml/Road.qml</file>
+        <file>qml/CarControl.qml</file>
+        <file>qml/Hole.qml</file>
+        <file>qml/GameScene.qml</file>
+        <file>qml/ControlProperties.qml</file>
+        <file>qml/ScreenSettings.qml</file>
+        <file>qml/PlayButton.qml</file>
+        <file>qml/CustomSlider.qml</file>
+        <file>qml/CustomSwitch.qml</file>
+        <file>qml/CustomTextField.qml</file>
+        <file>qml/CustomLabel.qml</file>
+        <file>resources/images/handle.svg</file>
+        <file>resources/images/hole.svg</file>
+        <file>resources/images/lane.svg</file>
+        <file>resources/images/car.svg</file>
+    </qresource>
+</RCC>
