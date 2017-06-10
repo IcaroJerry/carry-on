@@ -4,7 +4,7 @@ import QtQuick.Controls.Styles 1.4
 
 Switch {
     id:switchControl
-    style: SwitchStyle{
+    style: SwitchStyle {
         groove: Rectangle {
             id: grooveSwitch
             implicitWidth: 20 * 2

@@ -7,7 +7,9 @@ Item {
     scale: mouseArea.pressed ? 0.9 : 1.0
 
     signal clicked()
-    Behavior on scale { NumberAnimation { duration: 100 } }
+    Behavior on scale {
+        NumberAnimation { duration: 300 }
+    }
 
     Rectangle {
         anchors.fill: parent
@@ -21,6 +23,7 @@ Item {
         anchors.fill: parent
         onClicked: itemBtn.clicked()
     }
+
     Text {
         text: qsTr("PLAY")
         font.pointSize: parent.width * 0.3

@@ -19,7 +19,7 @@ Item {
 
     Text {
         id: name
-        text: qsTr(controls.carDirectionPosition.toString())
+        text: controls.carDirectionPosition.toString()
         color: "#000"
         font.family: "Helvetica"
         font.pointSize: 24

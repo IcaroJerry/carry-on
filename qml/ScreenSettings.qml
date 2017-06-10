@@ -26,9 +26,9 @@ Item {
     property real carHeight: screenWidth * 0.08
     property real carWidth: screenWidth * 0.06
 
-    property string backgroundColor: "#171F22"
-    property string primaryElementsColor: "#D52846"
-    property string secondElementsColor: "#BD2943"
-    property string thirdElementsColor: "#48494B"
-    property string controlPropertiesColor: "#232A30"
+    property color backgroundColor: "#171F22"
+    property color primaryElementsColor: "#D52846"
+    property color secondElementsColor: "#BD2943"
+    property color thirdElementsColor: "#48494B"
+    property color controlPropertiesColor: "#232A30"
 }

@@ -1,5 +1,7 @@
 import QtQuick 2.6
-Item{
+
+Item {
+    width: parent.width; height: parent.height
     property alias carVisible: car.visible
     property alias isLaneRunning: lane.running
 
@@ -9,7 +11,6 @@ Item{
 
         Car {
             id: car
-            visible: false
             z: 12
             y: screenSettings.carPosition
         }
@@ -19,7 +20,7 @@ Item{
             z: 11
         }
 
-        Hole{
+        Hole {
         }
     }
 }

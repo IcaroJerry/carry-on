@@ -1,22 +1,22 @@
 import QtQuick 2.5
 
-Item{
-     property alias running: animation.running
+Item {
+    property alias running: animation.running
 
-    Rectangle{
+    Rectangle {
         width: screenSettings.laneWidth * 2
         height: screenSettings.screenHeight
         x: screenSettings.gameSceneWidth / 4
         color: screenSettings.primaryElementsColor
     }
 
-    Item{
+    Item {
         width: screenSettings.laneWidth
         height:screenSettings.screenHeight * 2
         x: screenSettings.gameSceneVerticalCenter
 
         Image {
-            source: "lane.svg"
+            source: "qrc:/resources/images/lane.svg"
             id: mainLane
             width: parent.width
 
@@ -33,7 +33,7 @@ Item{
 
     }
 
-    Rectangle{
+    Rectangle {
         width: screenSettings.laneWidth * 2
         height: screenSettings.screenHeight
         x: (screenSettings.gameSceneWidth *3)/4

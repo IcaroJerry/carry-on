@@ -4,7 +4,7 @@ import QtQuick.Controls.Styles 1.4
 
 TextField {
     placeholderText: "00.0"
-    style: TextFieldStyle{
+    style: TextFieldStyle {
         background: Rectangle {
             implicitWidth: 100
             implicitHeight: 24

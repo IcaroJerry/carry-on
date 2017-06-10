@@ -1,17 +1,14 @@
 import QtQuick 2.5
 
-//Rectangle{
-Item{
+Item {
     id: x
     width: randomInt(car.height * 0.40, car.height * 0.9)
     height: x.width
-    //radius: x.width / 2
 
     Image {
-        source: "hole.svg"
-        width: parent.width
-        height: parent.height
         z:15
+        source: "qrc:/resources/images/hole.svg"
+        width: parent.width; height: parent.height
     }
 
     function randomInt(min, max) {
