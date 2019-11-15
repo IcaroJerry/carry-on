@@ -9,7 +9,6 @@ Rectangle{
         width: controlProperties.width * 0.9
         height: controlProperties.height * 0.9
         anchors.centerIn: controlProperties
-        color: "green"
 
         Rectangle{
             id:titleArea

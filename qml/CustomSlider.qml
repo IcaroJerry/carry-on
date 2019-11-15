@@ -4,12 +4,12 @@ import QtQuick.Controls.Styles 1.4
 
 Slider {
     visible: !playButton.visible
-    width: ((gameScene.width / 2) - (window.width * 0.01))
-    x: ((gameScene.width / 4) + (window.width * 0.01))
-    minimumValue: gameScene.width / 4
+    width: gameScene.width
+    x: gameScene.width
+    minimumValue: 0
     maximumValue: carDirection.minimumValue + carDirection.width
     value: carDirection.maximumValue / 2
-    stepSize: 2
+    stepSize: 1
     anchors.centerIn: parent
 
     style: SliderStyle {
@@ -23,16 +23,16 @@ Slider {
 
             Image {
                 id: handle
-                visible: !control.pressed
+                visible: true
                 source: "qrc:/resources/images/handle.svg"
                 width: parent.width; height: parent.height
             }
 
-            Image {
-                visible: !handle.visibler
-                source: "qrc:/resources/images/handle.svg"
-                width: handle.width; height: handle.height
-            }
+//            Image {
+//                visible: !handle.visibler
+//                source: "qrc:/resources/images/handle.svg"
+//                width: handle.width; height: handle.height
+//            }
         }
     }
 }

@@ -1,12 +1,15 @@
 import QtQuick 2.6
 
 Item {
-    width: parent.width; height: parent.height
     property alias carVisible: car.visible
     property alias isLaneRunning: lane.running
 
-    Road {
+
+    Rectangle {
         id: road
+        anchors.fill: parent
+        color: screenSettings.backgroundColor
+
         z: 10
 
         Car {
@@ -15,7 +18,7 @@ Item {
             y: screenSettings.carPosition
         }
 
-        Lane {
+        MiddleLane {
             id: lane
             z: 11
         }

@@ -21,7 +21,7 @@ Item {
     property real controlPropertiesWidth: screenWidth * 0.3
 
     property real laneHeight: screenHeight
-    property real laneWidth: screenWidth * 0.01
+    property real laneWidth: screenWidth * 0.02
 
     property real carHeight: screenWidth * 0.08
     property real carWidth: screenWidth * 0.06

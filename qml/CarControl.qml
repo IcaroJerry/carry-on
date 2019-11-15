@@ -2,8 +2,6 @@ import QtQuick 2.6
 
 Item {
     id: controls
-    width: parent.width
-    height: parent.height
     z: 13
 
     PlayButton {
@@ -17,18 +15,10 @@ Item {
         }
     }
 
-    Text {
-        id: name
-        text: controls.carDirectionPosition.toString()
-        color: "#000"
-        font.family: "Helvetica"
-        font.pointSize: 24
-        anchors.fill: parent
-        z: 100
-    }
-
     CustomSlider {
         id: carDirection
+        anchors.fill: parent
+        width: parent.width
     }
 
     property alias carDirectionPosition: carDirection.value

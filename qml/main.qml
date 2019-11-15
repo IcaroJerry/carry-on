@@ -10,27 +10,44 @@ ApplicationWindow {
     height: Screen.height
     color: screenSettings.backgroundColor
 
-    GameScene {
-        id: gameScene
-        height: screenSettings.gameSceneHeight
-        width: screenSettings.gameSceneWidth
-        Component.onCompleted: console.log("screenSettings.gameSceneHeight: ", screenSettings.gameSceneHeight)
+
+    GridLayout {
+        anchors.fill: parent
+
+        columns: 2
+        rows: 1
+
+        GridLayout {
+            columns: 1
+            rows: 2
+
+            Layout.preferredWidth: parent.width * 0.7
+            Layout.preferredHeight: parent.height
+
+            GameScene {
+                id: gameScene
+                Layout.preferredWidth: parent.width
+                Layout.preferredHeight: parent.height * 0.8
+                Layout.fillHeight: true
+            }
+
+//            CarControl {
+            CarControl {
+                id: carControl
+                Layout.preferredWidth: parent.width
+                Layout.preferredHeight: parent.height * 0.2
+                anchors.bottom: parent.bottom
+            }
+        }
+
+        ControlPanel {
+            id: controlProperties
+            Layout.preferredHeight: parent.height
+            Layout.preferredWidth: parent.width * 0.3
+            color: screenSettings.backgroundColor
+        }
     }
 
-    CarControl {
-        id: carControl
-        height: screenSettings.carControlHeight
-        width: screenSettings.carControlWidth
-        anchors.top: gameScene.bottom
-    }
-
-    ControlProperties {
-        id: controlProperties
-        height: screenSettings.controlPropertiesHeight
-        width: screenSettings.controlPropertiesWidth
-        color: screenSettings.backgroundColor
-        anchors.left: gameScene.right
-    }
 
     ScreenSettings {
         id: screenSettings
