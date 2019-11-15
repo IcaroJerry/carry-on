@@ -23,6 +23,14 @@ Item {
             z: 11
         }
 
+        Lane {
+            x: screenSettings.laneWidth * 2
+        }
+
+        Lane {
+            x: gameScene.width - (screenSettings.laneWidth * 2)
+        }
+
         Hole {
         }
     }
