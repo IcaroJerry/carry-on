@@ -10,7 +10,14 @@ TextField {
             implicitHeight: 24
             color: screenSettings.thirdElementsColor
         }
-        textColor: screenSettings.backgroundColor
+        textColor: screenSettings.primaryElementsColor
         selectionColor: screenSettings.primaryElementsColor
     }
+    validator: DoubleValidator {
+        bottom: 1
+        top: 1000
+        decimals: 2
+        notation: DoubleValidator.StandardNotation
+   }
+   inputMethodHints: Qt.ImhDigitsOnly
 }

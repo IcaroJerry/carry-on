@@ -4,17 +4,20 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls.Private 1.0
 
-Rectangle{
-    Rectangle{
-        width: controlProperties.width * 0.9
-        height: controlProperties.height * 0.9
+Rectangle {
+    width: parent.width
+    height: parent.height
+
+    Rectangle {
+        width: parent.width
+        height: parent.height
         anchors.centerIn: controlProperties
 
-        Rectangle{
+        Rectangle {
             id:titleArea
-            color: "#232A30"
+            color: screenSettings.controlPropertiesColor
             width: parent.width
-            height: parent.height * 0.1
+            height: parent.height * 0.15
             anchors.left: parent.left
             CustomLabel {
                 text: qsTr("Control Panel")
@@ -23,29 +26,31 @@ Rectangle{
             }
         }
 
-        Rectangle{
+        Rectangle {
             width: parent.width
-            height: parent.height * 0.9
+            height: parent.height * 0.85
             anchors.top: titleArea.bottom
-            color: "#232A30"
+            color: screenSettings.controlPropertiesColor
 
-            Rectangle{
+            Rectangle {
                 width: parent.width * 0.9
                 height: parent.height * 0.95
                 border.color: "#BD2845"
                 border.width: 2
-                color: "#232A30"
+                color: screenSettings.controlPropertiesColor
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                Rectangle{
+                Rectangle {
                     id: optionsArea
                     width: parent.width * 0.9
                     height: parent.height * 0.9
                     anchors.centerIn: parent
-                    color: "#232A30"
+                    color: screenSettings.controlPropertiesColor
 
-                    ColumnLayout {
+                    GridLayout {
                         anchors.margins: 10
+                        rows: 4
+                        columns: 1
 
                         ComboBox {
                             id: box
@@ -57,15 +62,15 @@ Rectangle{
                                 background: Rectangle {
                                     id: rectCategory
                                     border.width: 2
-                                    border.color:"#48494B"
-                                    color: "#48494B"
+                                    border.color: screenSettings.thirdElementsColor
+                                    color: screenSettings.thirdElementsColor
                                     width: box.width
                                 }
                                 label: Text {
                                     verticalAlignment: Text.AlignVCenter
                                     horizontalAlignment: Text.AlignHCenter
                                     font.pointSize: 15
-                                    color: "#232A30"
+                                    color: screenSettings.controlPropertiesColor
                                     text: control.currentText
                                 }
 
@@ -76,9 +81,9 @@ Rectangle{
 
                                     // ComboBox background
                                     frame: Rectangle {
-                                        color: "#232A30"
+                                        color: screenSettings.controlPropertiesColor
                                         border.width: 1
-                                        border.color:"#48494B"
+                                        border.color: screenSettings.thirdElementsColor
                                     }
 
                                     itemDelegate.label:             // an item text
@@ -86,7 +91,7 @@ Rectangle{
                                         verticalAlignment: Text.AlignVCenter
                                         horizontalAlignment: Text.AlignHCenter
                                         font.pointSize: 15
-                                        color: styleData.selected ? "#BD2845" : "#48494B"
+                                        color: styleData.selected ? "#BD2845" : screenSettings.thirdElementsColor
                                         text: styleData.text
                                     }
 
@@ -105,7 +110,7 @@ Rectangle{
                                     property Component frame: Rectangle {
                                         width: (parent ? parent.contentWidth : 0)
                                         height: (parent ? parent.contentHeight : 0) + 2
-                                        border.color: "#232A30"
+                                        border.color: screenSettings.controlPropertiesColor
                                         property real maxHeight: 500
                                         property int margin: 1
                                     }
@@ -131,7 +136,10 @@ Rectangle{
                             }
                         }
 
-                        RowLayout{
+                        GridLayout {
+                            rows: 1
+                            columns: 4
+
                             CustomLabel {
                                 text:  qsTr("P")
                                 font.pixelSize: optionsArea.width * 0.1
@@ -148,32 +156,44 @@ Rectangle{
                             }
 
                             CustomTextField {
+                                enabled: switchD.checked
                                 Layout.fillWidth: true
                             }
                         }
 
-                        RowLayout{
+                        GridLayout {
+                            rows: 1
+                            columns: 4
+
                             CustomLabel {
                                 text:  qsTr("I")
                                 font.pixelSize: optionsArea.width * 0.1
+                                width: parent.width * 0.2
                             }
 
                             CustomSwitch {
                                 id: switchI
+                                width: parent.width * 0.2
                                 checked: false
                             }
 
                             CustomLabel {
                                 text:  qsTr("Ki")
+                                width: parent.width * 0.2
                                 font.pixelSize: optionsArea.width * 0.1
                             }
 
                             CustomTextField {
+                                enabled: switchD.checked
+                                width: parent.width * 0.4
                                 Layout.fillWidth: true
                             }
                         }
 
-                        RowLayout{
+                        GridLayout {
+                            rows: 1
+                            columns: 4
+
                             CustomLabel {
                                 text:  qsTr("D")
                                 font.pixelSize: optionsArea.width * 0.1
@@ -189,6 +209,7 @@ Rectangle{
                             }
 
                             CustomTextField {
+                                enabled: switchD.checked
                                 Layout.fillWidth: true
                             }
                         }

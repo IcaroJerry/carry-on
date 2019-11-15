@@ -17,8 +17,6 @@ Item {
 
     CustomSlider {
         id: carDirection
-        anchors.fill: parent
-        width: parent.width
     }
 
     property alias carDirectionPosition: carDirection.value
